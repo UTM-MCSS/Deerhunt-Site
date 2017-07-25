@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <link rel="shortcut icon" href="{{ url_for('static', filename='images/deerblue.ico') }}">
+
+        <title>DeerHunt 2017</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome-4.6.3/css/font-awesome.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+				<script>
+				  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+						  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+							})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+							 ga('create', 'UA-57176464-4', 'auto');
+							 ga('send', 'pageview')										</script>
+				</script>
+
+    </head>
+
+    <body>
+        <div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                            <div id="notification-bar">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {%  endwith %}
+        </div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">DeerHunt</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                <li class="nav-btn about"><a href="#" onclick="scrollingTo('#about')">About</a></li>
+                <li class="nav-btn"><a href="#" onclick="scrollingTo('#faq')">FAQ</a></li>
+                <li class="nav-btn"><a href="#" onclick="scrollingTo('#contact')">Contact</a></li>
+                </ul>
+            </div><!--/.navbar-collapse -->
+          </div>
+        </nav>
+      
+      
+        <section class="anchor" id="intro">
+          <div class="jumbotron">
+              <div class="container">
+                  <div class="col-sm-6">
+                      <img src="{{ url_for('static', filename='images/deerblue.png') }}" class="img-responsive" alt="deerlogo"></div>
+                  <div class="col-sm-6 testing">
+                      <img src="{{ url_for('static', filename='images/deerblue.png') }}" class="mobile-logo" alt="deerlogo"></div>
+                      <div id="main-title" class="font-norm">DeerHunt <span class="font-light">2017</span></div>
+                      <div id="sub-title" class="font-light">oDeer();</div>
+											<a class="btn btn-default register-btn" href="/register">Register Now</a>
+                  </div>
+
+              </div>
+          </div>
+        </section>
+      
+        <section class="anchor" id="about">
+
+          <div class="container">
+              <h3 class="font-heavy">About <span class="font-light" style="font-size: 20px;"> | What's DeerHunt?</span></h3>
+              <div class="row" style="margin-top: 30px;">
+                  <div class="col-sm-12">
+                      <p class="font-norm">DeerHunt is University of Toronto Mississauga’s first ever overnight coding competition, from February 10th-11th! We’re reaching out to experienced upper year students, but lower year students are free to come if they are up for the challenge.</p>
+                      <p class="font-norm">Students will be using 15 different programming languages to complete dozens of problems at varying difficulties.</p>
+                      <p class="font-norm">More information coming soon.</p>
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <!--<section id="schedule">
+              <div class="container">
+                  <h3 class="font-heavy">Schedule <span class="font-light" style="font-size: 20px;"> | All Planned</span> </h3>
+                  <div class="col-sm-12">
+                  <li class="sched-day"><b>Day 1</b>
+                      <ul id="schedule">
+                          <li>9am something first</li>
+                          <li>12pm something second</li>
+                          <li>3pm something third</li>
+                          <li>6pm donezo</li>
+                      </ul>
+                  </li>
+
+                  <li class="sched-day"><b>Day 2</b>
+                      <ul id="schedule">
+                          <li>9am something first</li>
+                          <li>12pm something second</li>
+                          <li>3pm something third</li>
+                          <li>6pm donezo</li>
+                      </ul>
+                  </li>
+
+                  <li class="sched-day"><b>Day 3</b>
+                      <ul id="schedule">
+                          <li>9am something first</li>
+                          <li>12pm something second</li>
+                          <li>3pm something third</li>
+                          <li>6pm donezo</li>
+                      </ul>
+                  </li>
+              </div>
+              </div>
+          </section>-->
+
+        <section class="anchor" id="faq">
+          <div class="container">
+              <h3 class="font-heavy">FAQ <span class="font-light" style="font-size: 20px;"> | Get your questions answered</span></h3>
+
+              <div class="row">
+                  <div class="col-md-5 col-md-offset-1">
+                      <div class="teal-box">
+                          <b class="question">Who can participate?</b>
+                          <div class="faq-content">
+                                <p class="answer">Any post secondary students are welcome to attend DeerHunt. The problems will be catered to upper year students, but 1st and 2nd years are welcome.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                      <div class="teal-box">
+                          <b class="question">How much does it cost to attend?</b>
+                          <div class="faq-content">
+														<p class="answer">Admission is completely free. We'll also be providing food and accommodations for the entire event!</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+							<div class="row">
+                  <div class="col-md-5 col-md-offset-1">
+                      <div class="teal-box">
+                          <b class="question">Can I work in a group?</b>
+                          <div class="faq-content">
+                                <p class="answer">Yes! You can have up to 3 members in your group!</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                      <div class="teal-box">
+                          <b class="question">Is this a hackathon?</b>
+                          <div class="faq-content">
+														<p class="answer">Nope! You will be working on coding problems in 15 different programming language. The team with the highest score wins.</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-5 col-md-offset-1">
+                      <div class="teal-box">
+                          <b class="question">What if I don't know one of the programming language?</b>
+                          <div class="faq-content">
+                                <p class="answer">We will be hosting short workshops during the competition, for every necessary programming language… we gotchu!</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                      <div class="teal-box">
+                          <b class="question">When is it?</b>
+                          <div class="faq-content">
+														<p class="answer">Overnight, beginning Friday February 10th at 6pm, and ending on Saturday February 11th at 12pm. Be there or be a four cornered topological circle!</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              </div>
+                  <div class="col-sm-12 centered"> 
+                      <h4 class="font-light" style="color:white">Got more questions? Email us at deerhunt@utmmcss.com</h4>
+                  </div>
+          </div>
+      
+      </section>
+      
+      <section class="anchor" id="contact">
+          <div class="container">
+          <h3 class="font-heavy">Contact Us <span class="font-light" style="font-size: 20px;"> | Need help?</span></h3>
+              <div class="col-sm-12 centered"> 
+                  <a href="https://twitter.com/utmmcss?lang=en"><i class="icon fa fa-twitter fa-3x"></i></a>
+                  <a href="https://www.facebook.com/events/1079084748881692/"><i class="icon fa fa-facebook-official fa-3x"></i></a>
+                  <a href="mailto:deerhunt@utmmcss.com"><i class="icon fa fa-envelope fa-3x"></i></a>
+              </div>
+          
+          </div>
+      </section>
+
+      <footer>
+        <div class="container">
+            <p>&copy; 2017 DeerHunt.</p>
+        </div>
+      </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  </body>
+</html>
